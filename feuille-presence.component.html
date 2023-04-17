@@ -1,0 +1,38 @@
+
+<label class="form-label" for="abs">Date absence</label>
+<input type="date" [(ngModel)]="dateAbsence" name="abs" id="abs">
+<button (click)="filter()">filtrer</button>
+<ul>
+   <li *ngFor="let absent of absents">{{ absent.nom }}</li>
+ </ul>
+
+<table class="table table-striped">
+ <thead >
+    <th>Date</th>
+    <th>Manager</th>
+    <th>Entité</th>
+    <th>Collaborateurs</th>
+    <th>compte en charge</th>
+    <th>Motifs</th>
+    <th>Durée retard</th>
+    <th>Nombre de jours d'absence</th>
+    <th>Date debut absence</th>
+    <th>Date fin absence</th>
+    <th>Commentaire</th>
+ </thead>
+ <tbody>
+    <tr *ngFor="let object of objects">
+        <td> {{object.date}}</td>
+        <td> {{object.manager}}</td>
+        <td> {{object.entity}}</td>
+        <td> {{object.collaborateurs}}</td>
+        <td>{{object.compte}}</td>
+        <td>{{object.motifs}}</td>
+        <td>{{object.retard}}</td>
+        <td>{{object.absence}}</td>
+        <td>{{object.dateD}}</td>
+        <td>{{object.dateF}}</td>
+        <td>{{object.commentaire}}</td>
+    </tr>
+ </tbody>
+</table>
