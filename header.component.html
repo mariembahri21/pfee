@@ -1,0 +1,121 @@
+
+<style>
+  /* Style The Dropdown Button */
+  .dropbtn {
+      height: 50px;
+      width: 100px;
+
+    background-color: transparent;
+    color: gainsboro;
+    padding: 16px;
+    font-size: 30px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: gainsboro}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn {
+    background-color: #9fa3a0;
+  }
+  </style>
+
+<nav class="navbar" style="height: 400px;background-image:linear-gradient(rgba(187, 184, 233, 0.5), rgba(121, 136, 171, 0.5)),  url(https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YnVzaW5lc3MlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fA%3D%3D&w=1000&q=80);background-size:cover;">
+<form >
+  <div class="dropdown">
+    <button class="dropbtn" style="font-size: 50px; margin-top: 2px;" >Menu</button>
+    <div class="dropdown-content">
+      <a  routerLink="/feuillePresence" style="font-size: 20px;"> Feuille de présence</a>
+      <a routerLink="/page2" style="font-size: 20px;"> Formulaire de présence</a>
+      <a routerLink="/log"  style="font-size: 20px;">Logout</a>
+    </div>
+  </div>
+<h1 style="margin-left: 750px; color: aliceblue; font-size: 50px;">FINOAPP</h1>
+  <div class="row mb-3" style="text-align: center;">
+  <div class="col-md-3" style="margin-left: 490px;">
+      <mat-form-field style="margin-top: 20px;  width: 300px;" appearance="outline">
+        <mat-label for="date_absence" class="form-label">Date debut:</mat-label>
+      <input type="date" id="date_absence"  style="background-color: transparent; " [(ngModel)]="dateAbsence" name="date_absence" class="form-control" matInput>
+    </mat-form-field>
+  </div>
+  <div class="col-md-3">
+    <mat-form-field style="margin-top: 20px; width: 300px;" appearance="outline">
+      <mat-label for="date"  class="form-label">Date fin :</mat-label>
+    <input type="date" id="date" style="background-color: transparent; "  [(ngModel)]="date" name="date" class="form-control" matInput>
+  </mat-form-field>
+  </div>
+  </div>
+
+<div class="row mb-3" style="text-align: center; margin-left: 200px;">
+  <div class="col-md-3" >
+    <mat-form-field style=" width: 300px;" appearance="outline">
+      <mat-label for="entity" class="form-label">Entity :</mat-label>
+    <input type="text" id="entity" style="background-color: transparent; color: black;" [(ngModel)]="entity" name="entity" class="form-control" matInput>
+  </mat-form-field>
+  </div>
+  <div class="col-md-3" >
+    <mat-form-field style=" width: 300px;background-color: transparent; color: black; " appearance="outline">
+      <mat-label  for="compte" class="form-label">Compte :</mat-label>
+    <input type="text" id="compte" style="background-color: transparent; color: black;" [(ngModel)]="compte" name="compte" class="form-control" matInput>
+  </mat-form-field>
+  </div>
+  <div class="col-md-3">
+    <mat-form-field style=" width: 300px;" appearance="outline">
+      <mat-label for="manager" class="form-label">Manager</mat-label>
+      <input type="text" id="manager" style="background-color: transparent; color: black;" [(ngModel)]="manager" name="manager" class="form-control" matInput>
+  </mat-form-field>
+  </div>
+  <div class="col-md-3">
+    <mat-form-field style=" width: 300px;" appearance="outline">
+      <mat-label for="collaborateurs" class="form-label">Collaborateurs :</mat-label>
+    <input type="text" id="collaborateurs" style="background-color: transparent; color: black;" [(ngModel)]="collaborateurs" name="collaborateurs" class="form-control" matInput>
+  </mat-form-field>
+  </div>
+</div>
+  <div class="col-md-3 d-flex align-items-end">
+    <button style=" margin-left: 780px; height: 50px; width: 300px;" type="reset"  class="btn btn-light">Reset</button>
+    <button style=" margin-left: 20px; height: 50px;  width: 300px;" type="submit" (click)="applyFilters()" class="btn btn-secondary">Filtrer</button>
+  </div>
+
+</form>
+
+
+
+
+<canvas style=" margin-left: 100px; width: 700px; height: 500px; margin-top: 50px;" class="d-inline-block" id="myChart"></canvas>  <canvas class="d-inline-block" style="margin-right: 100px;  margin-top: 50px; width: 700px; height: 500px; " id="myChart2">Top</canvas>
+
+
+<h1 style="margin-left: 1180px; margin-top: 50px; color:#9fa3a0;font-weight: bold;">Top Fives des retardataires</h1>
+
+</nav>
